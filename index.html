@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workshop Pemutakhiran Indeks Desa 2024 | Permendesa No.9 Tahun 2024</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        'desa-green': '#0E7C66',
+        'desa-blue': '#0369A1', 
+        'desa-light': '#F0FDF9',
+        'desa-dark': '#064E3B'
+      },
+      fontFamily: {
+        'sans': ['Inter', 'ui-sans-serif', 'system-ui']
+      }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  html { scroll-behavior: smooth; }
+  .gradient-desa {
+    background: linear-gradient(135deg, #0E7C66 0%, #0369A1 100%);
+  }
+  .gradient-text {
+    background: linear-gradient(135deg, #0E7C66 0%, #0369A1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  }
+  .toc-active {
+    border-left: 3px solid #0E7C66;
+    background-color: #F0FDF9;
+  }
+  @media print {
+    .no-print { display: none !important; }
+    body { background: white !important; }
+  }
+</style>
+</head>
+<body class="font-sans bg-slate-50 text-slate-800">
+  <!-- Header -->
+  <header class="gradient-desa text-white sticky top-0 z-50 shadow-lg no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center py-4">
+        <div class="flex items-center gap-3">
+          <div class="bg-white/20 p-2 rounded-lg backdrop-blur-sm">
+            <i class="fa-solid fa-chart-column text-2xl"></i>
+          </div>
+          <div>
+            <h1 class="text-lg md:text-xl font-bold leading-tight">Workshop Pemutakhiran Indeks Desa</h1>
+            <p class="text-xs md:text-sm text-white/80">Permendesa PDTT No. 9 Tahun 2024</p>
+          </div>
+        </div>
+        <nav class="hidden lg:flex items-center gap-6 text-sm font-medium">
+          <a href="#latar-belakang" class="hover:text-white/80 transition">Latar Belakang</a>
+          <a href="#perubahan" class="hover:text-white/80 transition">Perubahan</a>
+          <a href="#dimensi" class="hover:text-white/80 transition">6 Dimensi</a>
+          <a href="#tahapan" class="hover:text-white/80 transition">Tahapan</a>
+          <a href="#simulasi" class="hover:text-white/80 transition">Simulasi</a>
+        </nav>
+        <button id="mobile-menu-btn" class="lg:hidden text-2xl">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-desa-dark/95 backdrop-blur-sm">
+      <div class="px-4 pt-2 pb-4 space-y-2">
+        <a href="#latar-belakang" class="block py-2 px-3 rounded hover:bg-white/10">Latar Belakang</a>
+        <a href="#perubahan" class="block py-2 px-3 rounded hover:bg-white/10">Perubahan</a>
+        <a href="#dimensi" class="block py-2 px-3 rounded hover:bg-white/10">6 Dimensi</a>
+        <a href="#tahapan" class="block py-2 px-3 rounded hover:bg-white/10">Tahapan</a>
+        <a href="#pengelolaan" class="block py-2 px-3 rounded hover:bg-white/10">Pengelolaan Data</a>
+        <a href="#simulasi" class="block py-2 px-3 rounded hover:bg-white/10">Simulasi</a>
+        <a href="#tindak-lanjut" class="block py-2 px-3 rounded hover:bg-white/10">Tindak Lanjut</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 gradient-desa opacity-95"></div>
+    <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1586773860418-d37222d8fce3?q=80&w=2073&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay opacity-20"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-white">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block px-4 py-1 bg-white/20 rounded-full text-sm font-medium mb-4 backdrop-blur-sm">
+            <i class="fa-solid fa-calendar-days mr-2"></i>Update Terbaru 2024
+          </span>
+          <h2 class="text-3xl md:text-5xl font-extrabold leading-tight mb-6">Materi Workshop Pemutakhiran <span class="text-amber-300">Indeks Desa</span></h2>
+          <p class="text-lg text-white/90 mb-8 max-w-xl">Panduan lengkap implementasi Indeks Desa sesuai Permendesa PDTT Nomor 9 Tahun 2024 sebagai pengganti IDM untuk mengukur kemajuan dan kemandirian desa.</p>
+          <div class="flex flex-wrap gap-4">
+            <button onclick="window.print()" class="bg-white text-desa-green px-6 py-3 rounded-lg font-semibold hover:bg-slate-100 transition shadow-lg flex items-center gap-2">
+              <i class="fa-solid fa-download"></i> Download Materi PDF
+            </button>
+            <a href="#latar-belakang" class="bg-white/20 backdrop-blur-sm px-6 py-3 rounded-lg font-semibold hover:bg-white/30 transition border border-white/30 flex items-center gap-2">
+              <i class="fa-solid fa-book-open"></i> Mulai Belajar
+            </a>
+          </div>
+        </div>
+        <div class="hidden lg:block">
+          <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 border border-white/20 shadow-2xl">
+            <h3 class="font-bold text-lg mb-4">Capaian Pembelajaran</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-amber-300 mt-1"></i><span>Memahami dasar hukum & filosofi Indeks Desa 2024</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-amber-300 mt-1"></i><span>Menguasai 6 Dimensi dan 28 Indikator Indeks Desa</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-amber-300 mt-1"></i><span>Mampu melakukan pendataan dan input di aplikasi</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-amber-300 mt-1"></i><span>Menyusun rencana tindak lanjut berbasis data ID</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid lg:grid-cols-4 gap-8">
+      <!-- Daftar Isi / Sidebar -->
+      <aside class="lg:col-span-1 no-print">
+        <div class="sticky top-28">
+          <div class="bg-white rounded-xl shadow-sm border border-slate-200 p-5">
+            <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+              <i class="fa-solid fa-list-ul text-desa-green"></i> Daftar Isi
+            </h3>
+            <nav id="toc" class="space-y-1 text-sm">
+              <a href="#latar-belakang" class="block py-2 px-3 rounded-md hover:bg-desa-light transition">1. Latar Belakang & Dasar Hukum</a>
+              <a href="#perubahan" class="block py-2 px-3 rounded-md hover:bg-desa-light transition">2. Perubahan Regulasi</a>
+              <a href="#dimensi" class="block py-2 px-3 rounded-md hover:bg-desa-light transition">3. 6 Dimensi Indeks Desa</a>
+              <a href="#tahapan" class="block py-2 px-3 rounded-md hover:bg-desa-light transition">4. Tahapan Pendataan</a>
+              <a href="#pengelolaan" class="block py-2 px-3 rounded-md hover:bg-desa-light transition">5. Pengelolaan Data</a>
+              <a href="#simulasi" class="block py-2 px-3 rounded-md hover:bg-desa-light transition">6. Simulasi & Studi Kasus</a>
+              <a href="#tindak-lanjut" class="block py-2 px-3 rounded-md hover:bg-desa-light transition">7. Tindak Lanjut & Pendanaan</a>
+            </nav>
+          </div>
+          <div class="bg-desa-light border border-desa-green/20 rounded-xl p-5 mt-6">
+            <h4 class="font-semibold text-desa-dark mb-2 flex items-center gap-2"><i class="fa-solid fa-clock"></i> Durasi Workshop</h4>
+            <p class="text-sm text-slate-700">1 Hari | 8 JP | 09.00 - 16.00 WIB</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Konten Utama -->
+      <div class="lg:col-span-3 space-y-12">
+        
+        <!-- 1. Latar Belakang & Dasar Hukum -->
+        <section id="latar-belakang" class="scroll-mt-28">
+          <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden card-hover">
+            <div class="p-6 md:p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="bg-desa-green text-white h-10 w-10 rounded-lg flex items-center justify-center font-bold">1</div>
+                <h2 class="text-2xl md:text-3xl font-bold gradient-text">Latar Belakang & Dasar Hukum</h2>
+              </div>
+              
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <h3 class="font-semibold text-lg mb-3 text-desa-blue">Latar Belakang</h3>
+                  <ul class="space-y-3 text-slate-700">
+                    <li class="flex gap-3"><i class="fa-solid fa-check text-desa-green mt-1"></i><span>Kebutuhan instrumen pengukuran pembangunan desa yang lebih komprehensif dan kontekstual.</span></li>
+                    <li class="flex gap-3"><i class="fa-solid fa-check text-desa-green mt-1"></i><span>Penyelarasan dengan SDGs Desa dan visi pembangunan nasional RPJMN 2025-2029.</span></li>
+                    <li class="flex gap-3"><i class="fa-solid fa-check text-desa-green mt-1"></i><span>Evaluasi dan penyempurnaan Indeks Desa Membangun (IDM) sebelumnya.</span></li>
+                    <li class="flex gap-3"><i class="fa-solid fa-check text-desa-green mt-1"></i><span>Penguatan data mikro desa sebagai basis perencanaan tepat sasaran.</span></li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-lg mb-3 text-desa-blue">Dasar Hukum Utama</h3>
+                  <div class="bg-slate-50 rounded-lg p-4 border border-slate-200">
+                    <ol class="space-y-3 text-slate-700 list-decimal list-inside">
+                      <li>UU No. 6 Tahun 2014 tentang Desa jo. UU No. 3 Tahun 2024</li>
+                      <li>PP No. 11 Tahun 2021 tentang BUM Desa</li>
+                      <li>Perpres No. 59 Tahun 2017 tentang SDGs</li>
+                      <li class="font-semibold text-desa-green">Permendesa PDTT No. 9 Tahun 2024 tentang Indeks Desa</li>
+                      <li>Permendesa No. 21 Tahun 2020 tentang Pedoman Umum Pembangunan Desa</li>
+                    </ol>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 p-4 bg-amber-50 border-l-4 border-amber-400 rounded-r-lg">
+                <p class="text-sm text-amber-800"><i class="fa-solid fa-lightbulb mr-2"></i><strong>Filosofi:</strong> Indeks Desa bukan sekadar ranking, tetapi instrumen diagnostik untuk mengenali kekuatan, masalah, dan potensi desa dalam 6 dimensi pembangunan.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. Perubahan Regulasi -->
+        <section id="perubahan" class="scroll-mt-28">
+          <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden card-hover">
+            <div class="p-6 md:p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="bg-desa-green text-white h-10 w-10 rounded-lg flex items-center justify-center font-bold">2</div>
+                <h2 class="text-2xl md:text-3xl font-bold gradient-text">Perubahan: Permendes No.2/2016 ke Permendes No.9/2024</h2>
+              </div>
+
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm border-collapse">
+                  <thead>
+                    <tr class="bg-slate-100">
+                      <th class="text-left p-3 border border-slate-200 font-semibold">Aspek</th>
+                      <th class="text-left p-3 border border-slate-200 font-semibold">Permendes PDTT No. 2/2016 (IDM)</th>
+                      <th class="text-left p-3 border border-slate-200 font-semibold text-desa-green">Permendesa No. 9/2024 (Indeks Desa)</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-slate-700">
+                    <tr>
+                      <td class="p-3 border border-slate-200 font-medium">Nomenklatur</td>
+                      <td class="p-3 border border-slate-200">Indeks Desa Membangun (IDM)</td>
+                      <td class="p-3 border border-slate-200 bg-desa-light/50">Indeks Desa (ID)</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 border border-slate-200 font-medium">Dimensi</td>
+                      <td class="p-3 border border-slate-200">3 Dimensi: Sosial, Ekonomi, Lingkungan</td>
+                      <td class="p-3 border border-slate-200 bg-desa-light/50">6 Dimensi: Layanan Dasar, Sosial, Ekonomi, Lingkungan, Aksesibilitas, Tata Kelola</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 border border-slate-200 font-medium">Jumlah Indikator</td>
+                      <td class="p-3 border border-slate-200">54 Indikator</td>
+                      <td class="p-3 border border-slate-200 bg-desa-light/50">28 Indikator Utama + Indikator Pendukung</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 border border-slate-200 font-medium">Status Desa</td>
+                      <td class="p-3 border border-slate-200">5 Status: Sangat Tertinggal, Tertinggal, Berkembang, Maju, Mandiri</td>
+                      <td class="p-3 border border-slate-200 bg-desa-light/50">Tetap 5 Status dengan penyesuaian ambang batas skor</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 border border-slate-200 font-medium">Fokus</td>
+                      <td class="p-3 border border-slate-200">Ketahanan Sosial, Ekonomi, Ekologi</td>
+                      <td class="p-3 border border-slate-200 bg-desa-light/50">Ditambah Layanan Dasar, Aksesibilitas, & Tata Kelola untuk perencanaan lebih presisi</td>
+                    </tr>
+                    <tr>
+                      <td class="p-3 border border-slate-200 font-medium">Aplikasi</td>
+                      <td class="p-3 border border-slate-200">Aplikasi IDM</td>
+                      <td class="p-3 border border-slate-200 bg-desa-light/50">Aplikasi Indeks Desa Terintegrasi SID</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3. 6 Dimensi -->
+        <section id="dimensi" class="scroll-mt-28">
+          <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden card-hover">
+            <div class="p-6 md:p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="bg-desa-green text-white h-10 w-10 rounded-lg flex items-center justify-center font-bold">3</div>
+                <h2 class="text-2xl md:text-3xl font-bold gradient-text">6 Dimensi Indeks Desa & Indikatornya</h2>
+              </div>
+              <p class="text-slate-600 mb-6">Indeks Desa 2024 mengukur kemajuan desa melalui 6 dimensi dengan total 28 indikator utama. Klik setiap dimensi untuk melihat detail indikator.</p>
+
+              <div id="accordion-dimensi" class="space-y-4">
+                <!-- Dimensi 1 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden">
+                  <button class="accordion-btn w-full flex justify-between items-center p-4 bg-desa-light hover:bg-desa-light/70 transition" data-target="dim1">
+                    <div class="flex items-center gap-3 text-left">
+                      <i class="fa-solid fa-heart-pulse text-desa-green text-xl"></i>
+                      <div>
+                        <h3 class="font-bold text-desa-dark">Dimensi 1: Layanan Dasar</h3>
+                        <p class="text-xs text-slate-600">5 Indikator | Fokus: Kesehatan, Pendidikan, Infrastruktur Dasar</p>
+                      </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                  </button>
+                  <div id="dim1" class="accordion-content hidden p-4 bg-white">
+                    <ul class="space-y-2 text-sm text-slate-700">
+                      <li>1.1 Ketersediaan dan akses sarana kesehatan</li>
+                      <li>1.2 Ketersediaan dan akses sarana pendidikan</li>
+                      <li>1.3 Akses air bersih dan sanitasi layak</li>
+                      <li>1.4 Ketersediaan listrik dan energi</li>
+                      <li>1.5 Akses informasi dan komunikasi</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Dimensi 2 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden">
+                  <button class="accordion-btn w-full flex justify-between items-center p-4 bg-desa-light hover:bg-desa-light/70 transition" data-target="dim2">
+                    <div class="flex items-center gap-3 text-left">
+                      <i class="fa-solid fa-people-group text-desa-green text-xl"></i>
+                      <div>
+                        <h3 class="font-bold text-desa-dark">Dimensi 2: Sosial</h3>
+                        <p class="text-xs text-slate-600">5 Indikator | Fokus: Modal Sosial, Budaya, Keamanan</p>
+                      </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                  </button>
+                  <div id="dim2" class="accordion-content hidden p-4 bg-white">
+                    <ul class="space-y-2 text-sm text-slate-700">
+                      <li>2.1 Keberagaman dan toleransi sosial</li>
+                      <li>2.2 Gotong royong dan solidaritas</li>
+                      <li>2.3 Keamanan dan ketertiban masyarakat</li>
+                      <li>2.4 Pelestarian adat dan budaya lokal</li>
+                      <li>2.5 Partisipasi perempuan dan kelompok rentan</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Dimensi 3 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden">
+                  <button class="accordion-btn w-full flex justify-between items-center p-4 bg-desa-light hover:bg-desa-light/70 transition" data-target="dim3">
+                    <div class="flex items-center gap-3 text-left">
+                      <i class="fa-solid fa-coins text-desa-green text-xl"></i>
+                      <div>
+                        <h3 class="font-bold text-desa-dark">Dimensi 3: Ekonomi</h3>
+                        <p class="text-xs text-slate-600">5 Indikator | Fokus: Produksi, Distribusi, Jasa</p>
+                      </div>
+                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                  </button>
+                  <div id="dim3" class="accordion-content hidden p-4 bg-white">
+                    <ul class="space-y-2 text-sm text-slate-700">
+                      <li>3.1 Diversifikasi dan produktivitas usaha desa</li>
+                      <li>3.2 Akses lembaga keuangan dan permodalan</li>
+                      <li>3.3 Ketersediaan pusat perdagangan dan pemasaran</li>
+                      <li>3.4 Kesempatan kerja dan angkatan kerja</li>
+                      <li>3.5 Keberadaan BUM Desa dan BUM Desa Bersama</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Dimensi 4 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden">
+                  <button class="accordion-btn w-full flex justify-between items-center p-4 bg-desa-light hover:bg-desa-light/70 transition" data-target="dim4">
+                    <div class="flex items-center gap-3 text-left">
+                      <i class="fa-solid fa-leaf text-desa-green text-xl"></i>
+                      <div>
+                        <h3 class="font-bold text-desa-dark">Dimensi 4: Lingkungan</h3>
+                        <p class="text-xs text-slate-600">4 Indikator | Fokus: Kualitas & Kerentanan Lingkungan</p>
+                      </div>
+                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                  </button>
+                  <div id="dim4" class="accordion-content hidden p-4 bg-white">
+                    <ul class="space-y-2 text-sm text-slate-700">
+                      <li>4.1 Kualitas lingkungan permukiman</li>
+                      <li>4.2 Pengelolaan sampah dan limbah</li>
+                      <li>4.3 Potensi rawan bencana dan mitigasi</li>
+                      <li>4.4 Pelestarian sumber daya alam</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Dimensi 5 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden">
+                  <button class="accordion-btn w-full flex justify-between items-center p-4 bg-desa-light hover:bg-desa-light/70 transition" data-target="dim5">
+                    <div class="flex items-center gap-3 text-left">
+                      <i class="fa-solid fa-road text-desa-green text-xl"></i>
+                      <div>
+                        <h3 class="font-bold text-desa-dark">Dimensi 5: Aksesibilitas</h3>
+                        <p class="text-xs text-slate-600">4 Indikator | Fokus: Konektivitas Wilayah</p>
+                      </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                  </button>
+                  <div id="dim5" class="accordion-content hidden p-4 bg-white">
+                    <ul class="space-y-2 text-sm text-slate-700">
+                      <li>5.1 Kondisi jalan dan jembatan desa</li>
+                      <li>5.2 Ketersediaan transportasi umum</li>
+                      <li>5.3 Keterjangkauan ke pusat layanan kabupaten/kota</li>
+                      <li>5.4 Jangkauan sinyal internet dan telepon</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <!-- Dimensi 6 -->
+                <div class="border border-slate-200 rounded-lg overflow-hidden">
+                  <button class="accordion-btn w-full flex justify-between items-center p-4 bg-desa-light hover:bg-desa-light/70 transition" data-target="dim6">
+                    <div class="flex items-center gap-3 text-left">
+                      <i class="fa-solid fa-landmark text-desa-green text-xl"></i>
+                      <div>
+                        <h3 class="font-bold text-desa-dark">Dimensi 6: Tata Kelola Pemerintahan Desa</h3>
+                        <p class="text-xs text-slate-600">5 Indikator | Fokus: Transparansi & Akuntabilitas</p>
+                      </div>
+                    </div>
+                    <i class="fa-solid fa-chevron-down transition-transform"></i>
+                  </button>
+                  <div id="dim6" class="accordion-content hidden p-4 bg-white">
+                    <ul class="space-y-2 text-sm text-slate-700">
+                      <li>6.1 Kualitas perencanaan pembangunan desa</li>
+                      <li>6.2 Kualitas pengelolaan keuangan desa</li>
+                      <li>6.3 Transparansi dan akuntabilitas layanan publik</li>
+                      <li>6.4 Kapasitas aparatur pemerintah desa</li>
+                      <li>6.5 Partisipasi masyarakat dalam pengambilan keputusan</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6">
+                <h4 class="font-semibold mb-3">Klasifikasi Status Desa Berdasarkan Skor ID</h4>
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-3 text-center text-sm">
+                  <div class="bg-red-100 text-red-800 p-3 rounded-lg"><p class="font-bold">Sangat Tertinggal</p><p>&lt; 0.491</p></div>
+                  <div class="bg-orange-100 text-orange-800 p-3 rounded-lg"><p class="font-bold">Tertinggal</p><p>0.491 - 0.599</p></div>
+                  <div class="bg-yellow-100 text-yellow-800 p-3 rounded-lg"><p class="font-bold">Berkembang</p><p>0.600 - 0.707</p></div>
+                  <div class="bg-sky-100 text-sky-800 p-3 rounded-lg"><p class="font-bold">Maju</p><p>0.708 - 0.815</p></div>
+                  <div class="bg-green-100 text-green-800 p-3 rounded-lg"><p class="font-bold">Mandiri</p><p>&gt; 0.815</p></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 4. Tahapan Pendataan -->
+        <section id="tahapan" class="scroll-mt-28">
+          <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden card-hover">
+            <div class="p-6 md:p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="bg-desa-green text-white h-10 w-10 rounded-lg flex items-center justify-center font-bold">4</div>
+                <h2 class="text-2xl md:text-3xl font-bold gradient-text">Tahapan Pendataan Indeks Desa</h2>
+              </div>
+
+              <div class="relative">
+                <div class="absolute left-4 top-0 h-full w-0.5 bg-slate-200"></div>
+                <div class="space-y-8">
+                  <div class="relative pl-12">
+                    <div class="absolute left-0 top-1 h-8 w-8 rounded-full bg-desa-green text-white flex items-center justify-center font-bold text-sm">1</div>
+                    <h3 class="font-bold text-lg">Persiapan</h3>
+                    <p class="text-slate-600 text-sm">Pembentukan Tim Pendata Desa, Bimtek, sosialisasi ke masyarakat, dan penyiapan instrumen kuesioner.</p>
+                  </div>
+                  <div class="relative pl-12">
+                    <div class="absolute left-0 top-1 h-8 w-8 rounded-full bg-desa-green text-white flex items-center justify-center font-bold text-sm">2</div>
+                    <h3 class="font-bold text-lg">Pelaksanaan Pendataan</h3>
+                    <p class="text-slate-600 text-sm">Pengumpulan data primer melalui observasi, wawancara, dan FGD di tingkat RT, Dusun, dan Desa. Data sekunder dari OPD.</p>
+                  </div>
+                  <div class="relative pl-12">
+                    <div class="absolute left-0 top-1 h-8 w-8 rounded-full bg-desa-green text-white flex items-center justify-center font-bold text-sm">3</div>
+                    <h3 class="font-bold text-lg">Verifikasi & Validasi</h3>
+                    <p class="text-slate-600 text-sm">Musyawarah Desa Verifikasi untuk memastikan data akurat dan disepakati bersama BPD, tokoh masyarakat, dan pendamping desa.</p>
+                  </div>
+                  <div class="relative pl-12">
+                    <div class="absolute left-0 top-1 h-8 w-8 rounded-full bg-desa-green text-white flex items-center justify-center font-bold text-sm">4</div>
+                    <h3 class="font-bold text-lg">Input Data</h3>
+                    <p class="text-slate-600 text-sm">Entry data ke Aplikasi Indeks Desa oleh Operator Desa paling lambat 31 Mei tahun berjalan.</p>
+                  </div>
+                  <div class="relative pl-12">
+                    <div class="absolute left-0 top-1 h-8 w-8 rounded-full bg-desa-green text-white flex items-center justify-center font-bold text-sm">5</div>
+                    <h3 class="font-bold text-lg">Analisis & Penetapan</h3>
+                    <p class="text-slate-600 text-sm">Pengolahan data oleh Kemendes PDTT dan penetapan status Indeks Desa melalui SK Menteri bulan Juli.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 5. Pengelolaan Data -->
+        <section id="pengelolaan" class="scroll-mt-28">
+          <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden card-hover">
+            <div class="p-6 md:p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="bg-desa-green text-white h-10 w-10 rounded-lg flex items-center justify-center font-bold">5</div>
+                <h2 class="text-2xl md:text-3xl font-bold gradient-text">Pengelolaan Data & Pelaporan</h2>
+              </div>
+
+              <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                  <h3 class="font-semibold text-lg mb-3 flex items-center gap-2"><i class="fa-solid fa-database text-desa-blue"></i> Prinsip Pengelolaan Data</h3>
+                  <ul class="space-y-2 text-sm text-slate-700">
+                    <li><i class="fa-solid fa-check-circle text-desa-green mr-2"></i>Akurat: sesuai fakta lapangan</li>
+                    <li><i class="fa-solid fa-check-circle text-desa-green mr-2"></i>Mutakhir: update tahunan</li>
+                    <li><i class="fa-solid fa-check-circle text-desa-green mr-2"></i>Akuntabel: dapat dipertanggungjawabkan</li>
+                    <li><i class="fa-solid fa-check-circle text-desa-green mr-2"></i>Partisipatif: melibatkan masyarakat</li>
+                    <li><i class="fa-solid fa-check-circle text-desa-green mr-2"></i>Terbuka: dapat diakses publik</li>
+                  </ul>
+                </div>
+                <div class="bg-slate-50 p-5 rounded-lg border border-slate-200">
+                  <h3 class="font-semibold text-lg mb-3 flex items-center gap-2"><i class="fa-solid fa-file-circle-check text-desa-blue"></i> Mekanisme Pelaporan</h3>
+                  <ul class="space-y-2 text-sm text-slate-700">
+                    <li><i class="fa-solid fa-1 text-desa-green mr-2"></i>Desa: Input via aplikasi + BA Musdes</li>
+                    <li><i class="fa-solid fa-2 text-desa-green mr-2"></i>Kecamatan: Verifikasi administratif</li>
+                    <li><i class="fa-solid fa-3 text-desa-green mr-2"></i>Kabupaten: Rekap & validasi substantif</li>
+                    <li><i class="fa-solid fa-4 text-desa-green mr-2"></i>Provinsi: Monitoring & asistensi</li>
+                    <li><i class="fa-solid fa-5 text-desa-green mr-2"></i>Pusat: Penetapan status nasional</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="mt-6 p-4 bg-blue-50 border-l-4 border-blue-400 rounded-r-lg">
+                <p class="text-sm text-blue-800"><i class="fa-solid fa-triangle-exclamation mr-2"></i><strong>Penting:</strong> Hasil Indeks Desa wajib menjadi rujukan utama dalam penyusunan RKP Desa dan APB Desa tahun berikutnya sesuai Pasal 8 Permendesa 9/2024.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 6. Simulasi -->
+        <section id="simulasi" class="scroll-mt-28">
+          <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden card-hover">
+            <div class="p-6 md:p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="bg-desa-green text-white h-10 w-10 rounded-lg flex items-center justify-center font-bold">6</div>
+                <h2 class="text-2xl md:text-3xl font-bold gradient-text">Simulasi Pengisian & Studi Kasus</h2>
+              </div>
+
+              <div class="grid lg:grid-cols-2 gap-8">
+                <div>
+                  <h3 class="font-semibold text-lg mb-4">Kalkulator Skor Indeks Desa Sederhana</h3>
+                  <div class="space-y-4">
+                    <div>
+                      <label class="text-sm font-medium">Layanan Dasar (0-1)</label>
+                      <input type="range" id="d1" min="0" max="1" step="0.01" value="0.65" class="w-full">
+                      <span class="text-sm text-slate-600">Nilai: <span id="d1_val">0.65</span></span>
+                    </div>
+                    <div>
+                      <label class="text-sm font-medium">Sosial (0-1)</label>
+                      <input type="range" id="d2" min="0" max="1" step="0.01" value="0.72" class="w-full">
+                      <span class="text-sm text-slate-600">Nilai: <span id="d2_val">0.72</span></span>
+                    </div>
+                    <div>
+                      <label class="text-sm font-medium">Ekonomi (0-1)</label>
+                      <input type="range" id="d3" min="0" max="1" step="0.01" value="0.58" class="w-full">
+                      <span class="text-sm text-slate-600">Nilai: <span id="d3_val">0.58</span></span>
+                    </div>
+                    <div>
+                      <label class="text-sm font-medium">Lingkungan (0-1)</label>
+                      <input type="range" id="d4" min="0" max="1" step="0.01" value="0.70" class="w-full">
+                      <span class="text-sm text-slate-600">Nilai: <span id="d4_val">0.70</span></span>
+                    </div>
+                    <div>
+                      <label class="text-sm font-medium">Aksesibilitas (0-1)</label>
+                      <input type="range" id="d5" min="0" max="1" step="0.01" value="0.60" class="w-full">
+                      <span class="text-sm text-slate-600">Nilai: <span id="d5_val">0.60</span></span>
+                    </div>
+                    <div>
+                      <label class="text-sm font-medium">Tata Kelola (0-1)</label>
+                      <input type="range" id="d6" min="0" max="1" step="0.01" value="0.75" class="w-full">
+                      <span class="text-sm text-slate-600">Nilai: <span id="d6_val">0.75</span></span>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h3 class="font-semibold text-lg mb-4">Hasil Simulasi</h3>
+                  <div class="bg-slate-50 rounded-lg p-6 text-center">
+                    <p class="text-sm text-slate-600 mb-2">Skor Indeks Desa Anda</p>
+                    <p id="total_score" class="text-5xl font-extrabold text-desa-green mb-4">0.667</p>
+                    <div id="status_badge" class="inline-block px-4 py-2 rounded-full font-bold text-yellow-800 bg-yellow-100">
+                      DESA BERKEMBANG
+                    </div>
+                    <canvas id="radarChart" class="mt-6"></canvas>
+                  </div>
+                  <div class="mt-4 p-4 bg-desa-light rounded-lg">
+                    <h4 class="font-semibold text-sm mb-2">Rekomendasi Prioritas:</h4>
+                    <p id="rekomendasi" class="text-sm text-slate-700">Tingkatkan dimensi Ekonomi dan Aksesibilitas yang masih di bawah 0.6</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-8">
+                <h3 class="font-semibold text-lg mb-3">Studi Kasus: Desa Sukamaju</h3>
+                <div class="bg-amber-50 border border-amber-200 rounded-lg p-4 text-sm">
+                  <p class="text-amber-900"><strong>Kondisi:</strong> Desa Sukamaju memiliki skor Ekonomi 0.52 dan Aksesibilitas 0.48. Jalan desa rusak, BUM Desa tidak aktif, pasar desa sepi.</p>
+                  <p class="mt-2 text-amber-900"><strong>Intervensi RKP Desa 2025:</strong> 1) Alokasi Dana Desa untuk perbaikan jalan poros desa 2km. 2) Penyertaan modal BUM Desa untuk unit usaha pertanian. 3) Pelatihan digital marketing untuk UMKM. </p>
+                  <p class="mt-2 text-amber-900"><strong>Target:</strong> Kenaikan skor Ekonomi menjadi 0.65 dan status menjadi Desa Maju pada 2025.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 7. Tindak Lanjut -->
+        <section id="tindak-lanjut" class="scroll-mt-28">
+          <div class="bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden card-hover">
+            <div class="p-6 md:p-8">
+              <div class="flex items-center gap-3 mb-6">
+                <div class="bg-desa-green text-white h-10 w-10 rounded-lg flex items-center justify-center font-bold">7</div>
+                <h2 class="text-2xl md:text-3xl font-bold gradient-text">Tindak Lanjut & Pendanaan</h2>
+              </div>
+
+              <div class="grid md:grid-cols-3 gap-6 mb-6">
+                <div class="text-center p-5 bg-desa-light rounded-lg border border-desa-green/20">
+                  <i class="fa-solid fa-file-invoice text-3xl text-desa-green mb-3"></i>
+                  <h4 class="font-bold">RKP Desa</h4>
+                  <p class="text-sm text-slate-600 mt-1">Susun program prioritas berbasis skor dimensi terendah</p>
+                </div>
+                <div class="text-center p-5 bg-desa-light rounded-lg border border-desa-green/20">
+                  <i class="fa-solid fa-sack-dollar text-3xl text-desa-green mb-3"></i>
+                  <h4 class="font-bold">APB Desa</h4>
+                  <p class="text-sm text-slate-600 mt-1">Fokus anggaran pada indikator merah/minus</p>
+                </div>
+                <div class="text-center p-5 bg-desa-light rounded-lg border border-desa-green/20">
+                  <i class="fa-solid fa-handshake-angle text-3xl text-desa-green mb-3"></i>
+                  <h4 class="font-bold">Kolaborasi</h4>
+                  <p class="text-sm text-slate-600 mt-1">Sinergi dengan OPD, CSR, dan supradesa</p>
+                </div>
+              </div>
+
+              <h3 class="font-semibold text-lg mb-3">Sumber Pendanaan untuk Peningkatan Indeks Desa</h3>
+              <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                  <thead class="bg-slate-100">
+                    <tr>
+                      <th class="text-left p-3 border border-slate-200">Sumber Dana</th>
+                      <th class="text-left p-3 border border-slate-200">Penggunaan Prioritas</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-slate-700">
+                    <tr><td class="p-3 border border-slate-200 font-medium">Dana Desa</td><td class="p-3 border border-slate-200">Infrastruktur dasar, BUM Desa, ketahanan pangan, BLT</td></tr>
+                    <tr><td class="p-3 border border-slate-200 font-medium">Alokasi Dana Desa (ADD)</td><td class="p-3 border border-slate-200">Siltap, operasional pemdes, peningkatan kapasitas aparatur</td></tr>
+                    <tr><td class="p-3 border border-slate-200 font-medium">Bagi Hasil Pajak/Retribusi</td><td class="p-3 border border-slate-200">Pelayanan publik, pembangunan sarana prasarana</td></tr>
+                    <tr><td class="p-3 border border-slate-200 font-medium">Bantuan Provinsi/Kabupaten</td><td class="p-3 border border-slate-200">Program spesifik: RTLH, jambanisasi, jalan kabupaten</td></tr>
+                    <tr><td class="p-3 border border-slate-200 font-medium">CSR & Pihak Ketiga</td><td class="p-3 border border-slate-200">Inovasi desa, digitalisasi, pengembangan ekonomi lokal</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-desa-dark text-white mt-16 no-print">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid md:grid-cols-3 gap-8">
+        <div>
+          <h3 class="font-bold text-lg mb-3 flex items-center gap-2">
+            <i class="fa-solid fa-chart-column"></i> Indeks Desa 2024
+          </h3>
+          <p class="text-sm text-white/70">Materi workshop ini disusun berdasarkan Permendesa PDTT Nomor 9 Tahun 2024 untuk mendukung pemutakhiran data Indeks Desa di seluruh Indonesia.</p>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Tautan Penting</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><a href="https://sid.kemendesa.go.id" class="hover:text-white">SID Kemendesa</a></li>
+            <li><a href="#" class="hover:text-white">Juknis Indeks Desa 2024 PDF</a></li>
+            <li><a href="#" class="hover:text-white">Video Tutorial Aplikasi</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="font-semibold mb-3">Kontak Pendamping</h4>
+          <ul class="space-y-2 text-sm text-white/70">
+            <li><i class="fa-solid fa-envelope mr-2"></i>pld@kemendesa.go.id</li>
+            <li><i class="fa-solid fa-phone mr-2"></i>1500040 - Halo Kemendesa</li>
+          </ul>
+          <button onclick="window.print()" class="mt-4 bg-white text-desa-dark px-4 py-2 rounded-lg text-sm font-semibold hover:bg-slate-100 transition">
+            <i class="fa-solid fa-download mr-2"></i>Download PDF
+          </button>
+        </div>
+      </div>
+      <div class="border-t border-white/20 mt-8 pt-6 text-center text-sm text-white/60">
+        <p>&copy; 2024 Direktorat Jenderal Pembangunan Desa dan Perdesaan - Kemendesa PDTT. Materi untuk tujuan edukasi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile Menu
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    // Accordion
+    document.querySelectorAll('.accordion-btn').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const target = document.getElementById(this.dataset.target);
+        const icon = this.querySelector('.fa-chevron-down');
+        target.classList.toggle('hidden');
+        icon.classList.toggle('rotate-180');
+      });
+    });
+
+    // TOC Active State
+    const sections = document.querySelectorAll('section[id]');
+    const tocLinks = document.querySelectorAll('#toc a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop - 150;
+        if (pageYOffset >= sectionTop) {
+          current = section.getAttribute('id');
+        }
+      });
+      tocLinks.forEach(link => {
+        link.classList.remove('toc-active');
+        if (link.getAttribute('href') === '#' + current) {
+          link.classList.add('toc-active');
+        }
+      });
+    });
+
+    // Simulator Indeks Desa
+    const inputs = ['d1', 'd2', 'd3', 'd4', 'd5', 'd6'];
+    const colors = {
+      'Sangat Tertinggal': { bg: 'bg-red-100', text: 'text-red-800' },
+      'Tertinggal': { bg: 'bg-orange-100', text: 'text-orange-800' },
+      'Berkembang': { bg: 'bg-yellow-100', text: 'text-yellow-800' },
+      'Maju': { bg: 'bg-sky-100', text: 'text-sky-800' },
+      'Mandiri': { bg: 'bg-green-100', text: 'text-green-800' }
+    };
+
+    function calculateScore() {
+      let values = inputs.map(id => parseFloat(document.getElementById(id).value));
+      inputs.forEach(id => {
+        document.getElementById(id + '_val').textContent = document.getElementById(id).value;
+      });
+      
+      let total = values.reduce((a, b) => a + b, 0) / 6;
+      document.getElementById('total_score').textContent = total.toFixed(3);
+      
+      let status = '';
+      if (total < 0.491) status = 'Sangat Tertinggal';
+      else if (total < 0.599) status = 'Tertinggal';
+      else if (total < 0.707) status = 'Berkembang';
+      else if (total < 0.815) status = 'Maju';
+      else status = 'Mandiri';
+      
+      const badge = document.getElementById('status_badge');
+      badge.textContent = 'DESA ' + status.toUpperCase();
+      badge.className = 'inline-block px-4 py-2 rounded-full font-bold ' + colors[status].text + ' ' + colors[status].bg;
+      
+      // Rekomendasi
+      let minDim = Math.min(...values);
+      let minIndex = values.indexOf(minDim);
+      let dimNames = ['Layanan Dasar', 'Sosial', 'Ekonomi', 'Lingkungan', 'Aksesibilitas', 'Tata Kelola'];
+      document.getElementById('rekomendasi').textContent = 
+        `Fokus perbaikan pada dimensi ${dimNames[minIndex]} dengan skor ${minDim.toFixed(2)} yang paling rendah.`;
+      
+      updateChart(values);
+    }
+
+    let radarChart;
+    function updateChart(data) {
+      const ctx = document.getElementById('radarChart').getContext('2d');
+      if (radarChart) radarChart.destroy();
+      radarChart = new Chart(ctx, {
+        type: 'radar',
+        data: {
+          labels: ['Layanan Dasar', 'Sosial', 'Ekonomi', 'Lingkungan', 'Aksesibilitas', 'Tata Kelola'],
+          datasets: [{
+            label: 'Skor Dimensi',
+            data: data,
+            backgroundColor: 'rgba(14, 124, 102, 0.2)',
+            borderColor: 'rgba(14, 124, 102, 1)',
+            borderWidth: 2,
+            pointBackgroundColor: 'rgba(14, 124, 102, 1)'
+          }]
+        },
+        options: {
+          scales: {
+            r: {
+              beginAtZero: true,
+              max: 1,
+              ticks: { stepSize: 0.2 }
+            }
+          },
+          plugins: {
+            legend: { display: false }
+          }
+        }
+      });
+    }
+
+    inputs.forEach(id => {
+      document.getElementById(id).addEventListener('input', calculateScore);
+    });
+    
+    // Initial calculation
+    calculateScore();
+  </script>
+<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
+</body>
+</html>
